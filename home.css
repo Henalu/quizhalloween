@@ -45,7 +45,7 @@ nav h1 {
     font-size: 30px;
 }
 
-nav span{
+nav span {
     font-size: 40px;
 }
 
@@ -72,7 +72,7 @@ aside {
     font-weight: bold;
 }
 
-aside h3{
+aside h3 {
     color: black;
     font-size: 50px;
     margin-top: 20px;
@@ -80,7 +80,7 @@ aside h3{
     margin-left: 8%
 }
 
-aside a{
+aside a {
     width: 100%;
     height: fit-content;
 }
@@ -91,10 +91,12 @@ aside a li {
     padding-left: 12%;
     margin-bottom: 20px;
 }
-aside li:hover{
+
+aside li:hover {
     color: #FF822D;
     background-color: #79797dd3;
 }
+
 /* Fin Menu */
 
 /*Rayos de colores*/
@@ -167,6 +169,24 @@ div#happyFace img {
     width: 100px;
 }
 
+div#happyFace img:hover {
+    animation-name: rotacion;
+    animation-timing-function: linear;
+    animation-duration: 600ms;
+    animation-delay: 300ms;
+    animation-iteration-count: 2;
+}
+
+@keyframes rotacion {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 div#bombilla {
     position: absolute;
     top: 212px;
@@ -190,6 +210,7 @@ div#bombilla img {
     background-repeat: no-repeat;
     z-index: -1;
 }
+
 /*Efecto Waves*/
 
 /* Contenido Inicial */
@@ -215,7 +236,7 @@ section#contenidoPrincipal p {
     font-size: 20px;
 }
 
-section button {
+section article button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -228,6 +249,50 @@ section button {
     border: 2px solid #FB5607;
     box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.197);
     border-radius: 40px;
+}
+
+section article button:hover {
+    animation-name: colorines;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-delay: 300ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorines {
+    0% {
+        background-color: #8338EC;
+    }
+    10% {
+        background-color: #FB5607;
+    }
+    20% {
+        background-color: #FF006E;
+    }
+    30% {
+        background-color: #FF822D;
+    }
+    40% {
+        background-color: #FFBE0B;
+    }
+    50% {
+        background-color: #3A86FF;
+    }
+    60% {
+        background-color: #FB5607;
+    }
+    70% {
+        background-color: #FF006E;
+    }
+    80% {
+        background-color: #FF822D;
+    }
+    90% {
+        background-color: #3A86FF;
+    }
+    100% {
+        background-color: #8338EC;
+    }
 }
 
 /* Fin Contenido Inicial */
@@ -245,4 +310,5 @@ section#estadisticas {
     align-self: center;
     margin-bottom: 50px;
 }
+
 /* Fin estadisticas */

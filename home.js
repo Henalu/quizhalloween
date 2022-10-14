@@ -36,6 +36,8 @@ window.addEventListener('load', () => {
 
     //Efecto Bombilla
     var happyFace = document.querySelector('#happyFace');
+    happyFace.style.cursor = 'pointer';
+    
     var bombilla = document.querySelector('#bombilla');
     bombilla.style.visibility = 'hidden';
 
@@ -47,11 +49,16 @@ window.addEventListener('load', () => {
     });
 
     var atrevete = document.querySelector('#atrevete');
+    atrevete.style.cursor = 'pointer';
     atrevete.addEventListener('mouseover', () => {
         bombilla.style.visibility = 'visible'
     });
     atrevete.addEventListener('mouseout', () => {
         bombilla.style.visibility = 'hidden'
+    });
+
+    atrevete.addEventListener('click', ()=>{
+
     });
 
 
