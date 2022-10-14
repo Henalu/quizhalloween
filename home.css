@@ -1,0 +1,248 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+section#contenidoPrincipal {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* Inicio menu */
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0 0 0 / 30%);
+    font-weight: bold;
+    font-size: 30px;
+    height: 70px;
+}
+
+nav div#titulo {
+    display: flex;
+    height: 100%;
+    min-width: 20%;
+    margin-left: 20px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+nav span{
+    font-size: 40px;
+}
+
+nav a#iconoMenu {
+    display: flex;
+    height: 100%;
+    font-size: 35px;
+    min-width: 10%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+aside {
+    position: absolute;
+    right: 0px;
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+    display: none;
+    background-color: white;
+    color: #747480;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+aside h3{
+    color: black;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 8%
+}
+
+aside a{
+    width: 100%;
+    height: fit-content;
+}
+
+aside a li {
+    color: #747480;
+    font-size: 30px;
+    padding-left: 12%;
+    margin-bottom: 20px;
+}
+aside li:hover{
+    color: #FF822D;
+    background-color: #79797dd3;
+}
+/* Fin Menu */
+
+/*Rayos de colores*/
+div#azul {
+    position: absolute;
+    width: 66%;
+    height: 440px;
+    z-index: -2;
+    left: 0px;
+    top: 0px;
+    background-color: #3A86FF;
+    clip-path: polygon(53% -100%, -562% 0%, 100% 74%);
+}
+
+div#amarillo {
+    position: absolute;
+    width: 37%;
+    height: 454px;
+    z-index: -2;
+    right: 0px;
+    top: 188px;
+    background-color: #FFBE0B;
+    clip-path: polygon(100% 0%, 100% 133%, -44% 45%);
+}
+
+div#rosa {
+    position: absolute;
+    width: 48%;
+    height: 325px;
+    z-index: -2;
+    left: 52%;
+    background-color: #FF006E;
+    clip-path: polygon(0% 0%, 210% 0%, 26% 100%);
+}
+
+div#naranja {
+    position: absolute;
+    width: 65%;
+    height: 357px;
+    z-index: -2;
+    top: 275px;
+    left: 0px;
+    background-color: #FB5607;
+    clip-path: polygon(100% 14%, 0% 99%, 0% 0%);
+}
+
+div#morado {
+    position: absolute;
+    width: 87%;
+    height: 367px;
+    top: 290px;
+    z-index: -2;
+    left: -2%;
+    background-color: #8338EC;
+    clip-path: polygon(0% 100%, 76% 6%, 100% 100%);
+    transform: rotate3d(1, 1, 1, 3deg);
+}
+
+/*Fin rayos de colores*/
+
+/* Emojis */
+div#happyFace {
+    position: absolute;
+    top: 272px;
+    left: 61%;
+    z-index: 0;
+}
+
+div#happyFace img {
+    width: 100px;
+}
+
+div#bombilla {
+    position: absolute;
+    top: 212px;
+    left: 65%;
+    z-index: 0;
+}
+
+div#bombilla img {
+    width: 77px;
+    rotate: 34deg;
+}
+
+/* Fin Emojis */
+.wave1 {
+    position: absolute;
+    width: 100%;
+    height: 374px;
+    background-image: url(img/wave\ \(white\).svg);
+    background-size: cover;
+    top: 347px;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+/*Efecto Waves*/
+
+/* Contenido Inicial */
+article#infoJuego {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    justify-content: space-evenly;
+    top: 38%;
+    left: 12%;
+    width: 30%;
+    min-height: 20%;
+}
+
+section#contenidoPrincipal h2 {
+    font-weight: bold;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+section#contenidoPrincipal p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+section button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFBE0B;
+    text-transform: uppercase;
+    width: 200px;
+    height: 70px;
+    margin-top: 15px;
+    border: 2px solid #FB5607;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.197);
+    border-radius: 40px;
+}
+
+/* Fin Contenido Inicial */
+
+/* Estadisticas */
+section#estadisticas {
+    width: 40%;
+    background-color: #fff;
+    border: 1px solid rgba(24, 23, 44, .16);
+    border-radius: 25px;
+    color: #18172c;
+    min-height: 336px;
+    padding: 5%;
+    text-align: justify;
+    align-self: center;
+    margin-bottom: 50px;
+}
+/* Fin estadisticas */
