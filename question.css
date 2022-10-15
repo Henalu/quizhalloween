@@ -45,3 +45,11 @@ button {
     border-radius: 20px;
     color: white;
 }
+
+div.dificultad {
+    display: flex;
+    flex-direction: column;
+}
+div#dif {
+    display: none;
+}
