@@ -23,6 +23,8 @@ window.onload = () => {
     ];
     localStorage.setItem('contador', JSON.stringify(0));
     localStorage.setItem('preguntas', JSON.stringify(preguntas));
+    localStorage.setItem('respuestas', JSON.stringify([]));
+    localStorage.setItem('soluciones', JSON.stringify([]));
     pintaPregunta(0);
 }
 
@@ -52,13 +54,22 @@ function pintaRespuestas(i) {
     for(let i = 0; i < opciones.length; i++) {
         opciones[posiciones[i]].innerText = respuestas[i];
     }
-    localStorage.setItem('soluciones', JSON.stringify([posiciones[0]]));
+    var soluciones = JSON.parse(localStorage.getItem('soluciones'));
+    soluciones.push(posiciones[0]);
+    localStorage.setItem('soluciones', JSON.stringify(soluciones));
 }
 
 function responde(i) {
-    localStorage.setItem('respuestas', JSON.stringify(i));
+    console.log(JSON.parse(localStorage.getItem('respuestas')));
+    var respuestas = JSON.parse(localStorage.getItem('respuestas'));
+    respuestas.push(i);
+    localStorage.setItem('respuestas', JSON.stringify(respuestas));
     var contador = JSON.parse(localStorage.getItem('contador'));
     contador++;
     localStorage.setItem('contador', JSON.stringify(contador));
-    pintaPregunta(contador);
+    if(contador < JSON.parse(localStorage.getItem('preguntas')).length) {
+        pintaPregunta(contador);
+    } else {
+        window.location.href = "./results.html";
+    }
 }
