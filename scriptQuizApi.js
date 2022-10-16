@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
     document.getElementsByClassName('pregunta')[0].style.display = 'none';
     document.getElementsByClassName('pregunta')[2].style.display = 'flex';
+    document.getElementsByClassName('pregunta')[2].style.marginTop = "8%";
+    document.getElementsByTagName('h1')[1].style.display = 'none'
 
     var elegirDif = document.querySelectorAll('.elegirDif');
     elegirDif[0].addEventListener('click', () => {
@@ -40,8 +42,18 @@ window.addEventListener('load', () => {
 })//Fin Load
 
 function pintaPregunta(i) {
+    var h1 = document.getElementsByTagName('h1')[1];
+    h1.style.display = 'flex'
+    h1.style.paddingTop = '4%'
+    var contador = JSON.parse(localStorage.getItem('contador'));
+    contador++;
+    localStorage.setItem('contador', JSON.stringify(contador));
+    h1.innerText = "Pregunta número " + contador
+
+    document.getElementsByClassName('pregunta')[0].style.marginTop = '2%';
     document.getElementsByClassName('pregunta')[0].style.display = 'flex';
     document.getElementsByClassName('pregunta')[2].style.display = 'none';
+
     var pregunta = JSON.parse(localStorage.getItem('preguntas'))[i];
     var zonaPregunta = document.getElementsByClassName('pregunta')[1];
     zonaPregunta.innerText = pregunta.question;
@@ -78,8 +90,6 @@ function responde(i) {
     respuestas.push(i);
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
     var contador = JSON.parse(localStorage.getItem('contador'));
-    contador++;
-    localStorage.setItem('contador', JSON.stringify(contador));
     if (contador < JSON.parse(localStorage.getItem('preguntas')).length) {
         pintaPregunta(contador);
     } else {

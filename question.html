@@ -11,10 +11,33 @@
 </head>
 
 <body>
-    <nav>Barra de menu</nav>
+    <div id="capa"></div>
+    <nav>
+        <div id="titulo">
+            <span>&#127774</span>
+            <h1>Sabelotodo</h1>
+        </div>
+        <a id="iconoMenu">&#9776</a>
+    </nav>
 
-    <h1>Pregunta número N</h1>
-    <div class="pregunta"> <p class="pregunta">Pregunta</p> 
+    <aside>
+        <h3 id="cerrarAside">&#10006</h3>
+        <ul>
+            <a href="">
+                <li>&#9813 Home</li>
+            </a>
+            <a href="">
+                <li>&#9816 Juego</li>
+            </a>
+            <a href="">
+                <li>&#9889 Resultados</li>
+            </a>
+        </ul>
+    </aside>
+
+    <h1>Pregunta número 1</h1>
+    <div class="pregunta">
+        <p class="pregunta">Pregunta</p>
         <div>
             <button class="opcion" onclick="responde(0);">opcion 1</button>
             <button class="opcion" onclick="responde(1);">opcion 2</button>
@@ -25,15 +48,25 @@
         </div>
     </div>
 
-    <div class="pregunta" id="dif"> <p>Elige el nivel de dificultad</p> 
+    <div class="pregunta" id="dif">
+        <p>Elige el nivel de dificultad</p>
         <div class="dificultad">
-            <button class="elegirDif" >Fácil</button>
-            <button class="elegirDif" >Normal</button>
-            <button class="elegirDif" >Difícil</button>
+            <button class="elegirDif">Fácil</button>
+            <button class="elegirDif">Normal</button>
+            <button class="elegirDif">Difícil</button>
         </div>
 
     </div>
+
+    <div id="azul"></div>
+    <div id="amarillo"></div>
+    <div id="rosa"></div>
+    <div id="naranja"></div>
+    <div id="morado"></div>
+    <div class="wave1"></div>
+    <div class="wave2"></div>
     <script src="scriptQuizApi.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>

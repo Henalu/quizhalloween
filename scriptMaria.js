@@ -54,14 +54,6 @@ function pintaRespuestas(i) {
     for (let i = 0; i < opciones.length; i++) {
         opciones[posiciones[i]].innerText = respuestas[i];
     }
-
-    //Henalu: para guardar las soluciones podemos ponerle un evento click a las opciones, y que se guarde en el local storage al hacer click
-    // opciones[0].addEventListener ('click', ()=>{
-        // var soluciones = JSON.parse(localStorage.getItem('soluciones'));
-        // soluciones.push(opciones[0]);
-        // localStorage.setItem('soluciones', JSON.stringify(soluciones));
-    // });
-    //Algo de este estilo a cada opcion y asi se guarda la opcion en la que se haga click cada vez
     var soluciones = JSON.parse(localStorage.getItem('soluciones'));
     soluciones.push(posiciones[0]);
     localStorage.setItem('soluciones', JSON.stringify(soluciones));
