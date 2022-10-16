@@ -16,24 +16,24 @@
     <h1>Pregunta número N</h1>
     <div class="pregunta"> <p class="pregunta">Pregunta</p> 
         <div>
-            <button onclick="responde(0);">opcion 1</button>
-            <button onclick="responde(1);">opcion 2</button>
+            <button class="opcion" onclick="responde(0);">opcion 1</button>
+            <button class="opcion" onclick="responde(1);">opcion 2</button>
         </div>
         <div>
-            <button onclick="responde(2);">opcion 3</button>
-            <button onclick="responde(3);">opcion 4</button>
+            <button class="opcion" onclick="responde(2);">opcion 3</button>
+            <button class="opcion" onclick="responde(3);">opcion 4</button>
         </div>
     </div>
 
     <div class="pregunta" id="dif"> <p>Elige el nivel de dificultad</p> 
         <div class="dificultad">
-            <button class="elegirDif" onclick="dificultad(0);">Fácil</button>
-            <button class="elegirDif" onclick="dificultad(1);">Normal</button>
-            <button class="elegirDif" onclick="dificultad(2);">Difícil</button>
+            <button class="elegirDif" >Fácil</button>
+            <button class="elegirDif" >Normal</button>
+            <button class="elegirDif" >Difícil</button>
         </div>
 
     </div>
-    <script src="scriptMaria.js"></script>
+    <script src="scriptQuizApi.js"></script>
 </body>
 
 </html>

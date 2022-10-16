@@ -49,7 +49,7 @@ function posRandom() {
 function pintaRespuestas(i) {
     var pregunta = JSON.parse(localStorage.getItem('preguntas'))[i];
     var respuestas = [pregunta.respCorrecta].concat(pregunta.respIncorrectas);
-    var opciones = document.getElementsByTagName('button');
+    var opciones = document.getElementsByClassName('opcion')
     var posiciones = posRandom();
     for (let i = 0; i < opciones.length; i++) {
         opciones[posiciones[i]].innerText = respuestas[i];
@@ -62,7 +62,6 @@ function pintaRespuestas(i) {
         // localStorage.setItem('soluciones', JSON.stringify(soluciones));
     // });
     //Algo de este estilo a cada opcion y asi se guarda la opcion en la que se haga click cada vez
-
     var soluciones = JSON.parse(localStorage.getItem('soluciones'));
     soluciones.push(posiciones[0]);
     localStorage.setItem('soluciones', JSON.stringify(soluciones));
