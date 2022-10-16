@@ -20,3 +20,15 @@ function dificultad(i) {
             break;
     }
 }
+
+//Henalu: otra forma de plantearlo pero con eventos
+    // var elegirDif = document.querySelectorAll('.elegirDif');
+    // elegirDif[0].addEventListener('click',()=>{
+    //     //https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple
+    // });
+    // elegirDif[1].addEventListener('click',()=>{
+    //     //https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple
+    // });
+    // elegirDif[2].addEventListener('click',()=>{
+    //     //https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple
+    // });

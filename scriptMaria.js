@@ -38,8 +38,8 @@ function pintaPregunta(i) {
 /* Genera un array de posiciones aleatorias para las respuestas*/
 function posRandom() {
     var posiciones = [];
-    var num = Math.floor(Math.random()*4);
-    for(let i = 0; i < 4; i++) {
+    var num = Math.floor(Math.random() * 4);
+    for (let i = 0; i < 4; i++) {
         posiciones.push((num + i) % 4);
     }
     return posiciones;
@@ -51,9 +51,18 @@ function pintaRespuestas(i) {
     var respuestas = [pregunta.respCorrecta].concat(pregunta.respIncorrectas);
     var opciones = document.getElementsByTagName('button');
     var posiciones = posRandom();
-    for(let i = 0; i < opciones.length; i++) {
+    for (let i = 0; i < opciones.length; i++) {
         opciones[posiciones[i]].innerText = respuestas[i];
     }
+
+    //Henalu: para guardar las soluciones podemos ponerle un evento click a las opciones, y que se guarde en el local storage al hacer click
+    // opciones[0].addEventListener ('click', ()=>{
+        // var soluciones = JSON.parse(localStorage.getItem('soluciones'));
+        // soluciones.push(opciones[0]);
+        // localStorage.setItem('soluciones', JSON.stringify(soluciones));
+    // });
+    //Algo de este estilo a cada opcion y asi se guarda la opcion en la que se haga click cada vez
+
     var soluciones = JSON.parse(localStorage.getItem('soluciones'));
     soluciones.push(posiciones[0]);
     localStorage.setItem('soluciones', JSON.stringify(soluciones));
@@ -67,7 +76,7 @@ function responde(i) {
     var contador = JSON.parse(localStorage.getItem('contador'));
     contador++;
     localStorage.setItem('contador', JSON.stringify(contador));
-    if(contador < JSON.parse(localStorage.getItem('preguntas')).length) {
+    if (contador < JSON.parse(localStorage.getItem('preguntas')).length) {
         pintaPregunta(contador);
     } else {
         window.location.href = "./results.html";
