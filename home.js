@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     capa.style.display = 'none';
     capa.style['background-color'] = 'rgb(0 0 0 / 30%)';
     capa.style.height = '2000px';
-    capa.style.width = '70%';
+    capa.style.width = '100%';
     capa.style.position = 'absolute';
     capa.style['z-index'] = '2';
 
