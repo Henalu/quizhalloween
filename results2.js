@@ -32,16 +32,17 @@ window.addEventListener('load', () => {
         capa.style.display = 'none';
         window.removeEventListener('scroll', disableScroll); //Eliminamos el eventlistener para habilitar scroll
     });
-    
+
     //mostramos los resultados
     muestraResultados();
 });//fin Load
 
 function muestraResultados() {
     var preguntas = JSON.parse(localStorage.getItem('preguntas'));
-    for(let i = 0; i < preguntas.length; i++) {
+    for (let i = 0; i < preguntas.length; i++) {
         pintaDivPregunta(i, preguntas);
-    } 
+    }
+    evaluacion();
 }
 
 function pintaDivPregunta(i, preguntas) {
@@ -63,9 +64,39 @@ function pintaDivPregunta(i, preguntas) {
 
 function pintaRespuestas(i, pregunta, div) {
     var respuestas = [pregunta.correct_answer].concat(pregunta.incorrect_answers);
-    for(let i = 0; i < 4; i++) {
+    var respuestasJugador = JSON.parse(localStorage.getItem('respuestas'));
+    for (let i = 0; i < 4; i++) {
         let button = document.createElement('button');
+        button.setAttribute('class', 'opcion');
         div.append(button);
         button.innerHTML = respuestas[i];
+
+        if (button.innerHTML == pregunta.correct_answer) {
+            button.style['background-color'] = 'green';
+        } else {
+            for (let j = 0; j < 10; j++) {
+                if (button.innerHTML == respuestasJugador[j] && respuestasJugador[j] != pregunta.correct_answers) {
+                    button.style['background-color'] = 'red';
+                }
+            }
+        }
+
+    }
+}
+
+function evaluacion() {
+    var soluciones = JSON.parse(localStorage.getItem('soluciones'));
+    var respuestasJugador = JSON.parse(localStorage.getItem('respuestas'));
+    var h3 = document.querySelectorAll('.soluciones h3');
+
+    let i = 0
+    while (i < 10) {
+        if (soluciones[i] == respuestasJugador[i]) {
+            h3[i].innerHTML = 'Pregunta ' + (i + 1) + ' &#9989 ';
+        } else {
+            h3[i].innerHTML = 'Pregunta ' + (i + 1) + ' &#10060 ';
+        }
+
+        i++;
     }
 }

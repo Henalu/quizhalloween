@@ -57,4 +57,8 @@ window.addEventListener('load', () => {
         bombilla.style.visibility = 'hidden'
     });
 
+    //Grafica
+
+    
+
 });//fin Load
