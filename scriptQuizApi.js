@@ -35,6 +35,15 @@ window.addEventListener('load', () => {
                 pintaPregunta(0);
             })
     });
+    elegirDif[3].addEventListener('click', () => {
+        let preguntas = [
+            {
+                question: "¿pregunta1?",
+                correct_answer: "correcta",
+                incorrect_answers: ['incorrecta 1', 'incorrecta 2', 'incorrecta 3']
+            }
+        ];
+    });
     localStorage.setItem('contador', JSON.stringify(0));
     localStorage.setItem('respuestas', JSON.stringify([]));
     localStorage.setItem('soluciones', JSON.stringify([]));
@@ -81,13 +90,14 @@ function pintaRespuestas(i) {
         opciones[posiciones[i]].innerHTML = respuestas[i];
     }
     var soluciones = JSON.parse(localStorage.getItem('soluciones'));
-    soluciones.push(posiciones[0]);
+    soluciones.push(pregunta.correct_answer);
     localStorage.setItem('soluciones', JSON.stringify(soluciones));
 }
 
 function responde(i) {
     var respuestas = JSON.parse(localStorage.getItem('respuestas'));
-    respuestas.push(i);
+    var respuesta = document.getElementsByClassName('opcion');
+    respuestas.push(respuesta[i].innerText);
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
     var contador = JSON.parse(localStorage.getItem('contador'));
     if (contador < JSON.parse(localStorage.getItem('preguntas')).length) {

@@ -14,6 +14,7 @@ body{
     padding: 0px;
     list-style: none;
     text-decoration: none;
+    font-family: 'Neuton';
 }
 
 body {
@@ -109,10 +110,6 @@ aside li:hover {
     background-color: #79797dd3;
 }
 
-*{
-    font-family: 'Paytone One';
-}
-
 div.pregunta {
     border-radius: 20px;
     background-color: #FFBE0B;
@@ -138,6 +135,7 @@ button {
     border-radius: 20px;
     color: white;
     box-shadow: -3px 2px 1px black;
+    font-size: large;
 }
 
 button:hover {
@@ -231,8 +229,4 @@ div#morado {
     top: -73px;
     background-repeat: no-repeat;
     z-index: -1;
-}
-
-p.pregunta {
-    font-size: large;
 }
