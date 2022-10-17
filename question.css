@@ -17,6 +17,11 @@ body{
     font-family: 'Neuton';
 }
 
+a{
+    color: black;
+    font-family: 'Neuton-Bold';
+}
+
 body {
     display: flex;
     flex-flow: column wrap;
@@ -55,6 +60,7 @@ nav h1 {
     text-transform: uppercase;
     font-size: 30px;
     color: white;
+    font-style: bold;
 }
 
 nav span {

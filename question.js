@@ -150,6 +150,44 @@ function responde(i) {
     if (contador < JSON.parse(localStorage.getItem('preguntas')).length) {
         pintaPregunta(contador);
     } else {
+        guardarPartida();
         window.location.href = "./results.html";
     }
+}
+
+
+function puntuacion() {
+    var soluciones = JSON.parse(localStorage.getItem('soluciones'));
+    var respuestas = JSON.parse(localStorage.getItem('respuestas'));
+    var contador = 0;
+    for (let i = 0; i < soluciones.length; i++) {
+        if (soluciones[i] == respuestas[i]) {
+            console.log(soluciones[i])
+            console.log(respuestas[i])
+            contador++;
+        }
+    }
+    return contador;
+}
+
+function fechaHoy() {
+    var hoy = new Date(Date.now());
+    return `${hoy.getDate()}/${hoy.getMonth() + 1}/${hoy.getFullYear()} ${hoy.getHours()}:${hoy.getMinutes()}`;
+}
+
+function guardarPartida() {
+    var partidas = JSON.parse(localStorage.getItem('partidas'));
+    var puntos = puntuacion();
+    console.log(puntos);
+    var fecha = fechaHoy();
+    if (!partidas) {
+        partidas = {
+            'fechas': [fecha],
+            'puntuaciones': [puntos]
+        };
+    } else {
+        partidas.fechas.push(fecha);
+        partidas.puntuaciones.push(puntos);
+    }
+    localStorage.setItem('partidas', JSON.stringify(partidas));
 }

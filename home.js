@@ -1,9 +1,9 @@
 window.addEventListener('load', () => {
     //Funcion para desabilitar el Scroll
-    function disableScroll(){  
+    function disableScroll() {
         window.scrollTo(0, 0);
-      }
-    
+    }
+
     //Estilos Capa auxiliar del Aside
     var capa = document.querySelector('#capa');
     capa.style.display = 'none';
@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
     //Efecto Bombilla
     var happyFace = document.querySelector('#happyFace');
     happyFace.style.cursor = 'pointer';
-    
+
     var bombilla = document.querySelector('#bombilla');
     bombilla.style.visibility = 'hidden';
 
@@ -58,7 +58,37 @@ window.addEventListener('load', () => {
     });
 
     //Grafica
+    var partidas = JSON.parse(localStorage.getItem('partidas'));
 
-    
+    const data = {
+        labels: partidas.fechas,
+        datasets: [{
+            label: 'Últimas partidas',
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 159, 64, 0.8)',
+                'rgba(255, 205, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(201, 203, 207, 0.8)'
+              ],
+            borderColor: 'rgb(255, 99, 132)',
+            data: partidas.puntuaciones,
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
 
 });//fin Load
+

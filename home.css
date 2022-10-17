@@ -6,9 +6,14 @@
     color: white;
 }
 
+h1, h2, h3 {
+    font-family: 'Neuton-Bold';
+}
+
 body {
     display: flex;
     flex-flow: column wrap;
+    background-color: #18172C;
 }
 
 section#contenidoPrincipal {
@@ -211,6 +216,18 @@ div#bombilla img {
     z-index: -1;
 }
 
+.wave2 {
+    position: absolute;
+    width: 100%;
+    height: 374px;
+    background-image: url(img/wave\ \(white\).svg);
+    background-size: cover;
+    top: 646px;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: rotate(180deg);
+}
+
 /*Efecto Waves*/
 
 /* Contenido Inicial */
@@ -309,6 +326,7 @@ section#estadisticas {
     text-align: justify;
     align-self: center;
     margin-bottom: 50px;
+    box-shadow: -4px 3px 10px rgb(90, 82, 240);
 }
 
 /* Fin estadisticas */

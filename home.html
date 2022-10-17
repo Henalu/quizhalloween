@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QuizHalloween</title>
     <link rel="stylesheet" href="home.css">
     <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" href="./img/happyFace.png">
 </head>
 
 <body>
@@ -45,6 +47,7 @@
         <div id="bombilla"><img src="img/bombilla.png" alt="bombilla"></div>
 
         <div class="wave1"></div>
+        <div class="wave2"></div>
 
         <article id="infoJuego">
             <div>
@@ -56,7 +59,9 @@
         </article>
     </section>
     <section id="estadisticas">
-        estadisticas
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
     </section>
 </body>
 
