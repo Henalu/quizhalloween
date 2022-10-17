@@ -73,14 +73,14 @@ window.addEventListener('load', () => {
                 incorrect_answers: ['Jorge', 'Jose Angel', 'Davinia']
             },
             {
-                question: "¿?",
-                correct_answer: "correcta",
-                incorrect_answers: ['incorrecta 1', 'incorrecta 2', 'incorrecta 3']
+                question: "¿Quien es el mejor delegado de todo The Bridge?",
+                correct_answer: "Jorge",
+                incorrect_answers: ['El/ delegado/a de UX', 'El/ delegado/a de ciber', 'El/ delegado/a de data']
             },
             {
-                question: "¿pregunta1?",
-                correct_answer: "correcta",
-                incorrect_answers: ['incorrecta 1', 'incorrecta 2', 'incorrecta 3']
+                question: "¿Quien es el/la más pequeño/a de la clase?",
+                correct_answer: "Maria",
+                incorrect_answers: ['Davinia', 'Jorge', 'Gerardo']
             },
             {
                 question: "¿Quien va a conseguir que todos sus alumnos ganen 100.000 al año?",
