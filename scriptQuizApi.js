@@ -48,7 +48,7 @@ function pintaPregunta(i) {
     var contador = JSON.parse(localStorage.getItem('contador'));
     contador++;
     localStorage.setItem('contador', JSON.stringify(contador));
-    h1.innerText = "Pregunta número " + contador
+    h1.innerHTML = "Pregunta número " + contador
 
     document.getElementsByClassName('pregunta')[0].style.marginTop = '2%';
     document.getElementsByClassName('pregunta')[0].style.display = 'flex';
@@ -56,7 +56,7 @@ function pintaPregunta(i) {
 
     var pregunta = JSON.parse(localStorage.getItem('preguntas'))[i];
     var zonaPregunta = document.getElementsByClassName('pregunta')[1];
-    zonaPregunta.innerText = pregunta.question;
+    zonaPregunta.innerHTML = pregunta.question;
     pintaRespuestas(i);
 }
 
@@ -78,7 +78,7 @@ function pintaRespuestas(i) {
     var opciones = document.getElementsByClassName('opcion')
     var posiciones = posRandom();
     for (let i = 0; i < opciones.length; i++) {
-        opciones[posiciones[i]].innerText = respuestas[i];
+        opciones[posiciones[i]].innerHTML = respuestas[i];
     }
     var soluciones = JSON.parse(localStorage.getItem('soluciones'));
     soluciones.push(posiciones[0]);

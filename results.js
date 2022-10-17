@@ -69,6 +69,7 @@ window.addEventListener('load', () => {
         console.log(opciones.length);
         let i = 0;
         while (i < opciones.length) {
+            console.log(respuestas[i]);
             opciones[i].innerHTML = respuestas[i];
             i++;
         }
