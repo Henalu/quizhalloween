@@ -57,10 +57,4 @@ window.addEventListener('load', () => {
         bombilla.style.visibility = 'hidden'
     });
 
-    atrevete.addEventListener('click', ()=>{
-
-    });
-
-
-
 });//fin Load
