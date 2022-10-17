@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
     });
     elegirDif[1].addEventListener('click', () => {
         fetch('https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple')
-        .then(res => res.json())
+            .then(res => res.json())
             .then(api => {
                 let preguntas = api.results;
                 console.log(preguntas);
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
     });
     elegirDif[2].addEventListener('click', () => {
         fetch('https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple')
-        .then(res => res.json())
+            .then(res => res.json())
             .then(api => {
                 let preguntas = api.results;
                 console.log(preguntas);
@@ -38,11 +38,58 @@ window.addEventListener('load', () => {
     elegirDif[3].addEventListener('click', () => {
         let preguntas = [
             {
+                question: "¿Cual es el fruto seco favorito de Coke?",
+                correct_answer: "Anacardos",
+                incorrect_answers: ['Cacahuetes', 'Pasas', 'Nueces']
+            },
+            {
+                question: "¿Cuantos subscriptores tiene Lydia en su canal de YouTube?",
+                correct_answer: "20.700",
+                incorrect_answers: ['5', '105.000', '827']
+            },
+            {
+                question: "¿Quien ve las clases desde más lejos en todo The Bridge?",
+                correct_answer: "Gerardo",
+                incorrect_answers: ['Jorge', 'Henalu', 'Sergio']
+            },
+            {
+                question: "¿Quien es el/la más friki de toda la clase de Full-Stack?",
+                correct_answer: "Jose Angel",
+                incorrect_answers: ['Coke', 'Maria', 'Gerardo']
+            },
+            {
+                question: "¿Sobre que tema domina más Helena?",
+                correct_answer: "Fantasías",
+                incorrect_answers: ['CSS', 'HTML', 'JavaScript']
+            },
+            {
+                question: "¿Quien tiene un perro guía sin ser ciego?",
+                correct_answer: "Sergio",
+                incorrect_answers: ['Davinia', 'Lydia', 'Jorge']
+            },
+            {
+                question: "¿Quien domina más sobre efectos de Google Meet?",
+                correct_answer: "Henalu",
+                incorrect_answers: ['Jorge', 'Jose Angel', 'Davinia']
+            },
+            {
+                question: "¿?",
+                correct_answer: "correcta",
+                incorrect_answers: ['incorrecta 1', 'incorrecta 2', 'incorrecta 3']
+            },
+            {
                 question: "¿pregunta1?",
                 correct_answer: "correcta",
                 incorrect_answers: ['incorrecta 1', 'incorrecta 2', 'incorrecta 3']
+            },
+            {
+                question: "¿Quien va a conseguir que todos sus alumnos ganen 100.000 al año?",
+                correct_answer: "Davinia",
+                incorrect_answers: ['El profesor/a de UX', 'El profesor/a de Ciber', 'El profesor/a de Data']
             }
         ];
+        localStorage.setItem('preguntas', JSON.stringify(preguntas));
+        pintaPregunta(0);
     });
     localStorage.setItem('contador', JSON.stringify(0));
     localStorage.setItem('respuestas', JSON.stringify([]));
